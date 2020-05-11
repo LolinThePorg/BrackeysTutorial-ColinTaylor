@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 1900072475741857238}
   - component: {fileID: 1900072475741857241}
   - component: {fileID: 1900072475741857240}
-  - component: {fileID: 1900072475741857243}
   - component: {fileID: 1900072475741857242}
   - component: {fileID: 1900072475741857239}
   - component: {fileID: 1900072475741857236}
+  - component: {fileID: 8349280603501121470}
+  - component: {fileID: 4545369053827878961}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -43,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900072475741857245}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1900072475741857240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83,19 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1900072475741857243
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900072475741857245}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1900072475741857242
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,9 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1900072475741857242}
-  forwardForce: 4200
+  forwardForce: 4300
   sidewaysForce: 68
-  upwardsForce: 1
 --- !u!114 &1900072475741857236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,3 +128,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 1900072475741857239}
+--- !u!135 &8349280603501121470
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900072475741857245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4545369053827878961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900072475741857245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c837b8b9bb09af4785e9f719e886b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1900072475741857242}
+  jumpForce: 5
+  onGround: 1
