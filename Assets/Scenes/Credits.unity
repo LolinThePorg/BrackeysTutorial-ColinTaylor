@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -563,7 +563,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -99.25}
-  m_SizeDelta: {x: 80.3, y: 34.4}
+  m_SizeDelta: {x: 117.1, y: 40.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1089848214
 MonoBehaviour:
@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 1752837442}
   - component: {fileID: 1752837441}
   m_Layer: 5
-  m_Name: quit
+  m_Name: play again
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,10 +958,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 64b1d47f0cc701a4392356ae655eba12, type: 3}
-    m_FontSize: 15
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -969,7 +969,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MENU
+  m_Text: PLAY AGAIN
 --- !u!222 &1752837442
 CanvasRenderer:
   m_ObjectHideFlags: 0
