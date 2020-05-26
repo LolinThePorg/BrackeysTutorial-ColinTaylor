@@ -9,16 +9,14 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 2000f;
     public float sidewaysForce = 500f;
     public float touchingBoostPad = 1f;
+
     // Use FixedUpdate for physics 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "Boost pad")
-        {
-            touchingBoostPad = 40000000;
-        }
-    }
     void FixedUpdate()
     {
+        //if (collision.gameObject.name == "Boost pad")
+        //{
+        //    touchingBoostPad = 40000;
+        //}
         //adding forward force
         rb.AddForce(0, 0, forwardForce * Time.deltaTime + touchingBoostPad);
         
