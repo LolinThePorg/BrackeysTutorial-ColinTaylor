@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (boosting)
         {
             boostTimer += Time.deltaTime;
-            if (boostTimer >= 5)
+            if (boostTimer >= 2)
             {
                 forwardForce = 4300;
                 boostTimer = 0;
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         if(other.tag == "speedBoost")
         {
             boosting = true;
-            forwardForce = 10000;
+            forwardForce = 8000;
         }
     }
 
