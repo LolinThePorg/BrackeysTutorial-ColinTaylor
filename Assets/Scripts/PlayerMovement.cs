@@ -1,4 +1,5 @@
 ﻿using System.Xml.Serialization;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,8 +9,16 @@ public class PlayerMovement : MonoBehaviour
 
     public float forwardForce = 2000f;
     public float sidewaysForce = 500f;
-    public float touchingBoostPad = 1f;
+    public float boost;
+    public float boostTimer;
+    public bool boosting;
 
+    private void Start()
+    {
+        boost = forwardForce;
+        boostTimer = 0;
+        boosting = false;
+    }
     // Use FixedUpdate for physics 
     void FixedUpdate()
     {
@@ -18,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         //    touchingBoostPad = 40000;
         //}
         //adding forward force
-        rb.AddForce(0, 0, forwardForce * Time.deltaTime + touchingBoostPad);
+        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
         
         if (Input.GetKey("d"))
         {
@@ -35,7 +44,27 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
         }
 
+        if (boosting)
+        {
+            boostTimer += Time.deltaTime;
+            if (boostTimer >= 5)
+            {
+                forwardForce = 4300;
+                boostTimer = 0;
+                boosting = false;
+            }
+        }
+
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "speedBoost")
+        {
+            boosting = true;
+            forwardForce = 10000;
+        }
+    }
+
+
 }
